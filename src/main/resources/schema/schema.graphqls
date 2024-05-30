@@ -1,0 +1,14 @@
+type Query {
+    allReviews: [Review]
+}
+
+type Book @key(fields: "id") @extends {
+    id: ID! @external
+    reviews: [Review]
+}
+
+type Review {
+    bookId: ID!
+    review: String!
+    author: String!
+}
